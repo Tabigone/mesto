@@ -9,8 +9,8 @@ function addProfileInfo() {
     let popupProfileName = document.querySelector(".popup__form-item_name");
     let popupProfileSubtitle = document.querySelector(".popup__form-item_subtitle");
 
-    profileName.innerHTML = `<h1 class="profile__info_name">${popupProfileName.value}</h1>`;
-    profileSubtitle.innerHTML = `<p class="profile__info_subtitle">${popupProfileSubtitle.value}</p>`
+    profileName.innerText = `${popupProfileName.value}`;
+    profileSubtitle.innerText = `${popupProfileSubtitle.value}`
 }
 saveButton.addEventListener("click", addProfileInfo);
 
