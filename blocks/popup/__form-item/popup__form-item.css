@@ -1,0 +1,17 @@
+@import url(_subtitle/popup__form-item_subtitle.css);
+@import url(_name/popup__form-item_name.css);
+@import url(_button/popup__form-item_button.css);
+
+.popup__form-item {
+    margin-left: 36px;
+    margin-right: 36px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 320px) {
+    .popup__form-item {
+        margin-left: 22px;
+        margin-right: 22px;
+    }
+}

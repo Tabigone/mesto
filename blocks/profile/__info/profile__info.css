@@ -1,0 +1,14 @@
+@import url(_name/profile__info_name.css);
+@import url(_container/profile__info_container.css);
+@import url(_subtitle/profile__info_subtitle.css);
+@import url(_edit-button/profile__info_edit-button.css);
+
+.profile__info {
+    display: flex;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__info {
+        flex-direction: column;
+    }
+}
