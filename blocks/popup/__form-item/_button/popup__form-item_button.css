@@ -1,6 +1,6 @@
 .popup__form-item_button {
     margin: 48px auto 0;
-    width: 358px;
+    width: 100%;
     height: 50px;
     font-style: normal;
     font-weight: 400;
@@ -20,14 +20,12 @@
 
 @media screen and (max-width: 528px) {
     .popup__form-item_button {
-        width: 282px;
         margin: 35px auto 0;
     }
 }
 
 @media screen and (max-width: 320px) {
     .popup__form-item_button {
-        max-width: 238px;
         margin: 45px auto 0;
         font-weight: 400;
         font-size: 14px;

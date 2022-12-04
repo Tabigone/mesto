@@ -5,6 +5,9 @@
     height: 50px;
     background-image: url("../../../images/profile/add-button.png");
     transition: opacity .3s linear;
+    background-color: black;
+    border: none;
+    padding: 0;
 }
 
 .profile__add-button:hover {
