@@ -1,0 +1,15 @@
+@import url(_close-icon/popup-cards__close-icon.css);
+
+.popup__cards {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}

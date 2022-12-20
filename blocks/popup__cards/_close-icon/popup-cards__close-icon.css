@@ -1,0 +1,29 @@
+.popup-cards__close-icon {
+    position: absolute;
+    top: -38px;
+    right: -38px;
+    width: 32px;
+    height: 32px;
+    transition: opacity .3s linear;
+    padding: 0;
+    background-color: rgba(0, 0, 0, .0);
+    border: none;
+}
+
+.popup-cards__close-icon:hover {
+    opacity: .6;
+}
+
+@media screen and (max-width: 528px) {
+    .popup-cards__close-icon {
+        top: -48px;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup-cards__close-icon {
+        top: -48px;
+        right: 0;
+    }
+}
