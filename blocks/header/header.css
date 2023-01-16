@@ -10,5 +10,6 @@
     .header {
         max-width: 320px;
         height: 56px;
+        margin: 0 auto;
     }
 }

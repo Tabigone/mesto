@@ -12,6 +12,7 @@
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     position: relative;
+
 }
 
 @media screen and (max-width: 909px) {
@@ -22,6 +23,8 @@
 
 @media screen and (max-width: 320px) {
     .page {
-        padding-top: 28px;
+        padding: 28px 0 0;
+        display: flex;
+        flex-direction: column;
     }
 }

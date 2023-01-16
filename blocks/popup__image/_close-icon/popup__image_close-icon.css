@@ -12,6 +12,7 @@
 
 .popup-image__close-icon:hover {
     opacity: .6;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 528px) {

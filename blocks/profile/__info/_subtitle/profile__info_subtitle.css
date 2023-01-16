@@ -1,5 +1,5 @@
 .profile__info_subtitle {
-    margin: 16px 0 0;
+    margin: 6px 0 0;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -19,6 +19,6 @@
         font-size: 14px;
         line-height: 17px;
         text-align: center;
-        margin: 14px auto 0;
+        margin: 8px auto 0;
     }
 }
