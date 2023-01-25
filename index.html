@@ -24,52 +24,19 @@
     </svg>
   </header>
   <main class="content">
-    <section class="popup__profile">
-      <form class="popup__container">
-        <button type="button" class="popup__close-icon">
-          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
-        </button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" id="profile__name" name="name" class="popup__form-item popup__form-item_name" value="Жак-Ив Кусто">
-        <input type="text" id="profile__subtitle" name="subtitle" class="popup__form-item popup__form-item_subtitle" value="Исследователь океана">
-        <input type="button" id="profile__button" name="button" class="popup__form-item_button" value="Сохранить">
-      </form>
-    </section>
-    <section class="popup__cards">
-      <form id="card-form" class="popup__container">
-        <button type="button" class="popup-cards__close-icon">
-          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
-        </button>
-        <h2 class="popup__title">Новое место</h2>
-        <input type="text" id="cards__name" name="name" class="popup__form-item popup__form-item_name" placeholder="Название">
-        <input type="text" id="cards__subtitle" name="subtitle" class="popup__form-item popup__form-item_subtitle" placeholder="Ссылка на картинку">
-        <input type="submit" id="cards__button" name="button" class="popup__form-item_button popup__cards-item_button" value="Создать">
-      </form>
-    </section>
-    <section class="popup__image ">
-        <div class="popup__image-container">
-          <button type="button" class="popup-image__close-icon">
-            <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
-          </button>
-          <img src="" class="popup__image_wide" alt="Изображение с карточки">
-          <p class="popup__image_title"></p>
-        </div>
-    </section>
     <section class="profile">
     <img class="profile__avatar" src="images/profile/Avatar.png" alt="Фото профиля">
     <div class="profile__info">
       <div class="profile__info_container">
-        <div class="first-string__container">
-          <h1 class="profile__info_name">Жак-Ив Кусто</h1>
-          <button class="profile__info_edit-button">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.5" y="0.5" width="23" height="23" stroke="white"/>
-              <path d="M17 8.32827L9.60377 15.7666L8.28302 14.4194L15.6604 7L17 8.32827ZM7 17L8.96226 16.4118L7.58491 15.0835L7 17Z" fill="white"/>
-            </svg>
-          </button>
-        </div>
-        <p class="profile__info_subtitle">Исследователь океана</p>
+        <h1 class="profile__info_name">Жак-Ив Кусто</h1>
+        <button class="profile__info_edit-button">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="23" height="23" stroke="white"/>
+            <path d="M17 8.32827L9.60377 15.7666L8.28302 14.4194L15.6604 7L17 8.32827ZM7 17L8.96226 16.4118L7.58491 15.0835L7 17Z" fill="white"/>
+          </svg>
+        </button>
       </div>
+      <p class="profile__info_subtitle">Исследователь океана</p>
     </div>
     <button class="profile__add-button"></button>
   </section>
@@ -84,7 +51,7 @@
           </button>
           <img class="element__image" src="" alt="Возможно, указана неверная ссылка">
           <div class="element__box">
-            <p class="element__name"></p>
+            <h2 class="element__name"></h2>
             <button class="element__like">
               <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.175 2.79339C17.5296 1.16647 14.8575 1.16474 13.2099 2.78822L10.9918 5.02623L8.75049 2.81011C7.10057 1.16255 4.43311 1.17062 2.81372 2.78784L2.80816 2.7934C2.01559 3.57707 1.58967 4.61629 1.58967 5.74496C1.58967 6.85716 2.02669 7.90492 2.81438 8.7027L10.9804 16.777L19.175 8.67433C20.8252 7.04265 20.8171 4.40102 19.1806 2.7989L19.175 2.79339ZM10.9804 19L1.6841 9.80806C0.606277 8.72013 0 7.27695 0 5.74496C0 4.21297 0.583822 2.76979 1.6841 1.68186C3.92173 -0.552786 7.58644 -0.560592 9.85625 1.68041C9.86421 1.68827 9.87215 1.69615 9.88007 1.70406L10.9804 2.792L12.0806 1.68186C12.0848 1.67771 12.089 1.67357 12.0932 1.66944C14.3622 -0.560612 18.0353 -0.556471 20.2991 1.68186C22.567 3.90213 22.567 7.54338 20.2991 9.78586L10.9804 19Z" fill="black"/>
@@ -94,6 +61,37 @@
         </div>
       </template>
   </section>
+    <section class="popup popup_profile">
+      <form class="popup__container">
+        <button type="button" class="popup__close-icon">
+          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
+        </button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input type="text" id="profile__name" name="name" class="popup__form-item popup__form-item_name" value="Жак-Ив Кусто">
+        <input type="text" id="profile__subtitle" name="subtitle" class="popup__form-item popup__form-item_subtitle" value="Исследователь океана">
+        <button type="button" id="profile__button" name="button" class="popup__form-item_button">Сохранить</button>
+      </form>
+    </section>
+    <section class="popup popup_cards">
+      <form id="card-form" class="popup__container">
+        <button type="button" class="popup__close-icon">
+          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
+        </button>
+        <h2 class="popup__title">Новое место</h2>
+        <input type="text" id="cards__name" name="name" class="popup__form-item popup__form-item_name" placeholder="Название">
+        <input type="text" id="cards__link" name="link" class="popup__form-item popup__form-item_subtitle" placeholder="Ссылка на картинку">
+        <button type="submit" id="cards__button" name="button" class="popup__form-item_button popup__cards-item_button">Создать</button>
+      </form>
+    </section>
+    <section class="popup popup_image ">
+      <div class="popup__image-container">
+        <button type="button" class="popup__close-icon">
+          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
+        </button>
+        <img src="" class="popup_image_wide" alt="Изображение с карточки">
+        <p class="popup__image_title"></p>
+      </div>
+    </section>
   </main>
   <section class="footer">
     <p class="footer__title">&copy;	2022 Mesto Russia</p>

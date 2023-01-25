@@ -1,23 +1,14 @@
 const editButton = document.querySelector(".profile__info_edit-button");
-const popupProfile = document.querySelector(".popup__profile");
-const popupCloseIcon = popupProfile.querySelector(".popup__close-icon");
 const saveButton = document.querySelector(".popup__form-item_button");
 const profileName = document.querySelector(".profile__info_name");
 const profileSubtitle = document.querySelector(".profile__info_subtitle");
-const popupCards = document.querySelector(".popup__cards");
 const addCardButton = document.querySelector(".profile__add-button");
-const popupCardCloseIcon = document.querySelector(".popup-cards__close-icon");
 const blockElements = document.querySelector(".elements");
-const popupImage = document.querySelector(".popup__image")
-const popupImageCloseIcon = document.querySelector(".popup-image__close-icon");
 const popupImageWide = document.querySelector(".popup__image_wide");
 const popupImageTitle = document.querySelector(".popup__image_title");
 const popupProfileName = document.querySelector(".popup__form-item_name");
 const popupProfileSubtitle = document.querySelector(".popup__form-item_subtitle");
 const elementTemplate = document.querySelector('#element-template').content;
-
-
-
 const scrollController = {
     disabledScroll() {
         document.body.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px`;
@@ -29,56 +20,39 @@ const scrollController = {
     }
 }
 
-function closePopupProfile() {
-    popupProfile.classList.add("popup_condition_hidden");
-    popupProfile.classList.remove("popup_condition_opened");
+function openPopup(popupType) {
+    popupType.classList.add("popup_condition_opened");
+    popupType.classList.remove("popup_condition_hidden");
+    scrollController.disabledScroll();
+}
+
+function closePopup(popup) {
+    popup.classList.add("popup_condition_hidden");
+    popup.classList.remove("popup_condition_opened");
     scrollController.enabledScroll();
 }
 
+const closeIconArray = Array.from(document.querySelectorAll(".popup__close-icon"));
+closeIconArray.forEach(closeIcon => {
+    closeIcon.addEventListener("click", function (evt) {
+        closePopup(evt.target.closest(".popup"));
+    })
+})
+
 function addProfileInfo() {
-    profileName.innerText = `${popupProfileName.value}`;
-    profileSubtitle.innerText = `${popupProfileSubtitle.value}`
-    closePopupProfile()
+    profileName.innerText = popupProfileName.value;
+    profileSubtitle.innerText = popupProfileSubtitle.value;
+    closePopup(document.querySelector("._profile"))
 }
 saveButton.addEventListener("click", addProfileInfo);
 
-function openPopupProfile() {
-    popupProfile.classList.add("popup_condition_opened");
-    popupProfile.classList.remove("popup_condition_hidden");
-    scrollController.disabledScroll();
-}
-editButton.addEventListener("click", openPopupProfile);
+editButton.addEventListener("click", function (){
+    openPopup(document.querySelector("._profile"))
+});
 
-popupCloseIcon.addEventListener("click", closePopupProfile);
-
-function openPopupCards() {
-    popupCards.classList.add("popup_condition_opened");
-    popupCards.classList.remove("popup_condition_hidden");
-    scrollController.disabledScroll();
-}
-addCardButton.addEventListener("click", openPopupCards);
-
-function closePopupCards() {
-    popupCards.classList.add("popup_condition_hidden");
-    popupCards.classList.remove("popup_condition_opened");
-    scrollController.enabledScroll();
-}
-popupCardCloseIcon.addEventListener("click", closePopupCards);
-
-function openPopupImage() {
-    popupImage.classList.add("popup_condition_opened");
-    popupImage.classList.remove("popup_condition_hidden");
-}
-
-function closePopupImage() {
-    popupImage.classList.add("popup_condition_hidden");
-    popupImage.classList.remove("popup_condition_opened");
-    scrollController.enabledScroll();
-}
-
-popupImageCloseIcon.addEventListener("click", closePopupImage);
-
-
+addCardButton.addEventListener("click", function (){
+    openPopup(document.querySelector("._cards"))
+});
 
 const cardsArray = [
     {
@@ -108,19 +82,18 @@ const cardsArray = [
 ];
 
 function openPopupImg (event) {
-    openPopupImage(popupImage);
+    openPopup(document.querySelector("._image"));
     popupImageWide.src = event.target.src;
     const currentCard = event.target.closest(".element")
     popupImageTitle.textContent = currentCard.querySelector(".element__name").textContent;
-    popupImage.classList.add("popup_condition_opened");
-    popupImage.classList.remove("popup_condition_hidden");
-    scrollController.disabledScroll();
+    openPopup(document.querySelector("._image"));
 }
 
 function renderCard(cardName, cardImg) {
     const element = elementTemplate.querySelector(".element").cloneNode(true);
     element.querySelector(".element__image").src = cardImg;
     element.querySelector(".element__name").textContent = cardName;
+    element.querySelector(".element__image").alt = cardName;
 
     const likeButton = element.querySelector(".element__like");
     likeButton.addEventListener("click", function (event){
@@ -138,33 +111,25 @@ function renderCard(cardName, cardImg) {
     blockElements.prepend(element);
 }
 
-function loadCards(cards) {
-    for (let i = 0; i < cards.length; i++) {
-     const cardImgValue = cards[i].link;
-     const cardNameValue = cards[i].name;
-     renderCard(cardNameValue, cardImgValue);
-    }
+for (let i = 0; i < cardsArray.length; i++) {
+    const cardImgValue = cardsArray[i].link;
+    const cardNameValue = cardsArray[i].name;
+    renderCard(cardNameValue, cardImgValue);
 }
-loadCards(cardsArray)
 
 const popupCardName = document.querySelector("#cards__name")
-const popupCardSubtitle = document.querySelector("#cards__subtitle")
+const popupCardsLink = document.querySelector("#cards__link")
 
 function addNewCard () {
-    const cardImgValue =  popupCardSubtitle.value;
+    const cardImgValue =  popupCardsLink.value;
     const cardNameValue = popupCardName.value;
     renderCard(cardNameValue, cardImgValue);
-    closePopupCards()
+    closePopup(document.querySelector("._cards"))
 }
 
 document.querySelector("#card-form").addEventListener("submit", function(event){
         event.preventDefault();
 });
 
-const saveCardButton = document.querySelector(".popup__cards-item_button")
+const saveCardButton = document.querySelector("._cards-item_button")
 saveCardButton.addEventListener("click", addNewCard);
-
-
-
-
-

@@ -6,8 +6,8 @@
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/logo/logo.css);
-@import url(../blocks/popup__profile/popup__profile.css);
-@import url(../blocks/popup__cards/popup__cards.css);
-@import url(../blocks/popup__image/popup__image.css);
+@import url(../blocks/popup/popup.css);
 @import url(../blocks/body/body.css);
+@import url(../blocks/element/element.css);
+
 

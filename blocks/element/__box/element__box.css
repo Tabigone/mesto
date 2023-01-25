@@ -1,0 +1,7 @@
+.element__box {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 79px;
+    align-items: center;
+}

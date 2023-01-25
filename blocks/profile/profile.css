@@ -1,7 +1,6 @@
 @import url(__avatar/profile__avatar.css);
 @import url(__info/profile__info.css);
 @import url(__add-button/profile__add-button.css);
-@import url(__first-row/profile__first-row.css);
 
 .profile {
     min-width: 320px;
