@@ -4,11 +4,12 @@ const profileName = document.querySelector(".profile__info_name");
 const profileSubtitle = document.querySelector(".profile__info_subtitle");
 const addCardButton = document.querySelector(".profile__add-button");
 const blockElements = document.querySelector(".elements");
-const popupImageWide = document.querySelector(".popup__image_wide");
-const popupImageTitle = document.querySelector(".popup__image_title");
+const popupImageWide = document.querySelector(".popup_image__wide");
+const popupImageTitle = document.querySelector(".popup_image__title");
 const popupProfileName = document.querySelector(".popup__form-item_name");
 const popupProfileSubtitle = document.querySelector(".popup__form-item_subtitle");
 const elementTemplate = document.querySelector('#element-template').content;
+
 const scrollController = {
     disabledScroll() {
         document.body.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px`;
@@ -42,16 +43,16 @@ closeIconArray.forEach(closeIcon => {
 function addProfileInfo() {
     profileName.innerText = popupProfileName.value;
     profileSubtitle.innerText = popupProfileSubtitle.value;
-    closePopup(document.querySelector("._profile"))
+    closePopup(document.querySelector(".popup_profile"))
 }
 saveButton.addEventListener("click", addProfileInfo);
 
 editButton.addEventListener("click", function (){
-    openPopup(document.querySelector("._profile"))
+    openPopup(document.querySelector(".popup_profile"))
 });
 
 addCardButton.addEventListener("click", function (){
-    openPopup(document.querySelector("._cards"))
+    openPopup(document.querySelector(".popup_cards"))
 });
 
 const cardsArray = [
@@ -82,11 +83,11 @@ const cardsArray = [
 ];
 
 function openPopupImg (event) {
-    openPopup(document.querySelector("._image"));
+    openPopup(document.querySelector(".popup_image"));
     popupImageWide.src = event.target.src;
     const currentCard = event.target.closest(".element")
     popupImageTitle.textContent = currentCard.querySelector(".element__name").textContent;
-    openPopup(document.querySelector("._image"));
+    openPopup(document.querySelector(".popup_image"));
 }
 
 function renderCard(cardName, cardImg) {
@@ -124,12 +125,12 @@ function addNewCard () {
     const cardImgValue =  popupCardsLink.value;
     const cardNameValue = popupCardName.value;
     renderCard(cardNameValue, cardImgValue);
-    closePopup(document.querySelector("._cards"))
+    closePopup(document.querySelector(".popup_cards"))
 }
 
 document.querySelector("#card-form").addEventListener("submit", function(event){
         event.preventDefault();
 });
 
-const saveCardButton = document.querySelector("._cards-item_button")
+const saveCardButton = document.querySelector(".popup__cards-item_button")
 saveCardButton.addEventListener("click", addNewCard);
