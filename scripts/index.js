@@ -85,7 +85,6 @@ function openPopupImg (event) {
     popupImageWide.src = event.target.src;
     const currentCard = event.target.closest(".element")
     popupImageTitle.textContent = currentCard.querySelector(".element__name").textContent;
-    openPopup(document.querySelector(".popup_image"));
 }
 
 function renderCard(cardName, cardImg) {
