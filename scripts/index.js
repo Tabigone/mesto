@@ -1,11 +1,10 @@
-const editButton = document.querySelector(".profile__info_edit-button");
-const saveButton = document.querySelector(".popup__form-item_button");
-const profileName = document.querySelector(".profile__info_name");
-const profileSubtitle = document.querySelector(".profile__info_subtitle");
+const editButton = document.querySelector(".profile__edit-button");
+const profileName = document.querySelector(".profile__info-name");
+const profileSubtitle = document.querySelector(".profile__info-subtitle");
 const addCardButton = document.querySelector(".profile__add-button");
 const blockElements = document.querySelector(".elements");
-const popupImageWide = document.querySelector(".popup_image__wide");
-const popupImageTitle = document.querySelector(".popup_image__title");
+const popupImageWide = document.querySelector(".popup__wide");
+const popupImageTitle = document.querySelector(".popup__card-name");
 const popupProfileName = document.querySelector(".popup__form-item_name");
 const popupProfileSubtitle = document.querySelector(".popup__form-item_subtitle");
 const elementTemplate = document.querySelector('#element-template').content;
@@ -21,9 +20,9 @@ const scrollController = {
     }
 }
 
-function openPopup(popupType) {
-    popupType.classList.add("popup_condition_opened");
-    popupType.classList.remove("popup_condition_hidden");
+function openPopup(popup) {
+    popup.classList.add("popup_condition_opened");
+    popup.classList.remove("popup_condition_hidden");
     scrollController.disabledScroll();
 }
 
@@ -45,7 +44,6 @@ function addProfileInfo() {
     profileSubtitle.innerText = popupProfileSubtitle.value;
     closePopup(document.querySelector(".popup_profile"))
 }
-saveButton.addEventListener("click", addProfileInfo);
 
 editButton.addEventListener("click", function (){
     openPopup(document.querySelector(".popup_profile"))
@@ -130,7 +128,10 @@ function addNewCard () {
 
 document.querySelector("#card-form").addEventListener("submit", function(event){
         event.preventDefault();
+        addNewCard()
 });
 
-const saveCardButton = document.querySelector(".popup__cards-item_button")
-saveCardButton.addEventListener("click", addNewCard);
+document.querySelector("#profile-form").addEventListener("submit", function(event){
+    event.preventDefault();
+    addProfileInfo()
+});

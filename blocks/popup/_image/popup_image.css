@@ -1,3 +1,14 @@
-@import url(__wide/popup_image__wide.css);
-@import url(__container/popup_image__container.css);
-@import url(__title/popup_image__title.css);
+@import url(../__wide/popup__wide.css);
+
+.popup_image .popup__container {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    width: initial;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 0 0;
+    box-sizing: initial;
+}
