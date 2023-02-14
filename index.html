@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="pages/index.css">
+  <link rel="icon" href="images\header\logo.svg" sizes="any">
   <title>Mesto</title>
 </head>
 <body>
@@ -62,28 +63,35 @@
       </template>
   </section>
     <section class="popup popup_profile">
-      <form id="profile-form" class="popup__container">
+      <div class="popup__cover"></div>
+      <form id="profile-form" class="popup__form popup__container" novalidate>
         <button type="button" class="popup__close-icon">
           <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
         </button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" id="profile__name" name="name" class="popup__form-item popup__form-item_name" value="Жак-Ив Кусто">
-        <input type="text" id="profile__subtitle" name="subtitle" class="popup__form-item popup__form-item_subtitle" value="Исследователь океана">
+        <input required minlength="2" maxlength="40" type="text" id="profile__name-input" name="name" class="popup__form-item popup__form-item_name" value="Жак-Ив Кусто">
+        <span class="popup__form-item-error profile__name-input-error"></span>
+        <input required minlength="2" maxlength="200" type="text" id="profile__subtitle-input" name="subtitle" class="popup__form-item popup__form-item_subtitle" value="Исследователь океана">
+        <span class="popup__form-item-error profile__subtitle-input-error"></span>
         <button type="submit" id="profile__button" name="button" class="popup__form-item_button">Сохранить</button>
       </form>
     </section>
     <section class="popup popup_cards">
-      <form id="card-form" class="popup__container">
+      <div class="popup__cover"></div>
+      <form id="card-form" class="popup__form popup__container" novalidate>
         <button type="button" class="popup__close-icon">
           <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
         </button>
         <h2 class="popup__title">Новое место</h2>
-        <input type="text" id="cards__name" name="name" class="popup__form-item popup__form-item_name" placeholder="Название">
-        <input type="text" id="cards__link" name="link" class="popup__form-item popup__form-item_subtitle" placeholder="Ссылка на картинку">
+        <input type="text" required minlength="2" maxlength="30" id="cards__name" name="name" class="popup__form-item popup__form-item_name" placeholder="Название">
+        <span class="popup__form-item-error cards__name-error"></span>
+        <input type="url" required id="cards__link" name="link" class="popup__form-item popup__form-item_subtitle" placeholder="Ссылка на картинку">
+        <span class="popup__form-item-error cards__link-error"></span>
         <button type="submit" id="cards__button" name="button" class="popup__form-item_button popup__cards-item_button">Создать</button>
       </form>
     </section>
     <section class="popup popup_image ">
+      <div class="popup__cover"></div>
       <div class="popup__container">
         <button type="button" class="popup__close-icon">
           <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
@@ -94,9 +102,10 @@
     </section>
   </main>
   <section class="footer">
-    <p class="footer__title">&copy;	2022 Mesto Russia</p>
+    <p class="footer__title">&copy;	2023 Mesto Russia</p>
   </section>
 </div>
 <script src="scripts/index.js"></script>
+<script src="scripts/validate.js"></script>
 </body>
 </html>

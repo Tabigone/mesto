@@ -126,11 +126,33 @@ function addNewCard () {
 }
 
 document.querySelector("#card-form").addEventListener("submit", function(event){
-        event.preventDefault();
-        addNewCard()
+    event.preventDefault();
+    addNewCard()
+    popupCardsLink.value = "";
+    popupCardName.value = ""
+    toggleButtonState(cardInputList, cardButton);
 });
 
 document.querySelector("#profile-form").addEventListener("submit", function(event){
     event.preventDefault();
     addProfileInfo()
 });
+
+const popupCoverArray = Array.from(document.querySelectorAll(".popup__cover"));
+popupCoverArray.forEach(cover => {
+    cover.addEventListener("click", function (evt) {
+        closePopup(evt.target.closest(".popup"));
+
+    })
+})
+
+const popupArray = Array.from(document.querySelectorAll(".popup"));
+popupArray.forEach(popup => {
+    document.addEventListener("keydown", function (evt) {
+        if (evt.code === "Escape") {
+            closePopup(popup);
+        }
+    })
+})
+
+

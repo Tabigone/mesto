@@ -1,6 +1,7 @@
 @import url(_subtitle/popup__form-item_subtitle.css);
 @import url(_name/popup__form-item_name.css);
 @import url(_button/popup__form-item_button.css);
+@import url(_type_error/popup__form-item_type_error.css);
 
 .popup__form-item {
     border: none;
