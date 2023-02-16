@@ -129,8 +129,7 @@ document.querySelector("#card-form").addEventListener("submit", function(event){
     event.preventDefault();
     addNewCard()
     popupCardsLink.value = "";
-    popupCardName.value = ""
-    toggleButtonState(cardInputList, cardButton);
+    popupCardName.value = "";
 });
 
 document.querySelector("#profile-form").addEventListener("submit", function(event){
