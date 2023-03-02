@@ -27,7 +27,6 @@
     .profile__add-button {
         margin: 36px auto 0;
         width: 282px;
-        background-image: url("../../../images/profile/add-buttonMob.svg");
     }
 }
 
@@ -35,6 +34,5 @@
     .profile__add-button {
         margin: 32px auto 0;
         width: 282px;
-        background-image: url("../../../images/profile/add-buttonMob.svg");
     }
 }
