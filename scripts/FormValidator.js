@@ -1,19 +1,24 @@
+//CДЕЛАТЬ В ВЕТКЕ!!!!! 16-17
+
 class FormValidator {
-    constructor(formElement) {
+    constructor(validationSelectors, formElement) {
         this._formElement = formElement;
-        this._inputList = Array.from(formElement.querySelectorAll(".popup__form-item"));
-        this._buttonElement = formElement.querySelector(".popup__form-item_button");
-    }
+        this._inputSelector = validationSelectors.inputSelector;
+        this._submitButtonSelector = validationSelectors.submitButtonSelector;
+        this._inputErrorClass = validationSelectors.inputErrorClass;
+        this._errorClass = validationSelectors.errorClass; 
+        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    };
 
     _showError(inputElement, errorMessage, errorElement) {
-        inputElement.classList.add("popup__form-item_type_error");
+        inputElement.classList.add(this._inputErrorClass);
         errorElement.textContent = errorMessage;
-        errorElement.classList.add("popup__input-error_active");
+        errorElement.classList.add(this._errorClass);
     }
 
     _hideError(inputElement, errorElement) {
-        inputElement.classList.remove("popup__form-item_type_error");
-        errorElement.classList.remove("popup__input-error_active");
+        inputElement.classList.remove(this._inputErrorClass);
+        errorElement.classList.remove(this._errorClass);
         errorElement.textContent = "";
     }
 
@@ -40,7 +45,8 @@ class FormValidator {
         }
     }
 
-    _setEventListeners() {
+    _setValidation() {
+        this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
         this._toggleButtonState();
         this._formElement.addEventListener("submit", (evt) => {
             evt.preventDefault();
@@ -55,8 +61,9 @@ class FormValidator {
     }
 
     enableValidation() {
-        this._setEventListeners();
+        this._setValidation();
     }
 }
 
 export default FormValidator;
+//CДЕЛАТЬ В ВЕТКЕ!!!!!
