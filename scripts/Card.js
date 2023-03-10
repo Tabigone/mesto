@@ -1,7 +1,8 @@
-import openPopup from "./index.js";
+import {openPopup} from "./index.js";
 
 const popupImageWide = document.querySelector(".popup__wide");
 const popupImageTitle = document.querySelector(".popup__card-name");
+const popupImage = document.querySelector(".popup_image");
 
 class Card {
     constructor(name, link, templateSelector) {
@@ -9,6 +10,7 @@ class Card {
         this._link = link;
         this._templateSelector = templateSelector;
     }
+
 
     _getTemplate() {
         const template = document.querySelector(this._templateSelector).content;
@@ -22,13 +24,11 @@ class Card {
     _handleDeleteCard(event) {
         event.target.closest(".element").remove();
     }
-
-    _openPopupImg(event) {
-        openPopup(document.querySelector(".popup_image"));
-        popupImageWide.src = event.target.src;
-        const currentCard = event.target.closest(".element");
-        popupImageTitle.textContent =
-            currentCard.querySelector(".element__name").textContent;
+    
+    _openPopupImg() {
+        openPopup(popupImage);
+        popupImageWide.src = this._link;
+        popupImageTitle.textContent = this._name;
     }
 
     _setEventListeners(cardElement) {
@@ -39,7 +39,9 @@ class Card {
         deleteButton.addEventListener("click", this._handleDeleteCard);
 
         const cardImage = cardElement.querySelector(".element__image");
-        cardImage.addEventListener("click", this._openPopupImg);
+        cardImage.addEventListener("click", () => {
+            this._openPopupImg()
+        });
     }
 
     generateCard() {

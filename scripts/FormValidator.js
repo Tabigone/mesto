@@ -1,5 +1,3 @@
-//CДЕЛАТЬ В ВЕТКЕ!!!!! 16-17
-
 class FormValidator {
     constructor(validationSelectors, formElement) {
         this._formElement = formElement;
@@ -66,4 +64,3 @@ class FormValidator {
 }
 
 export default FormValidator;
-//CДЕЛАТЬ В ВЕТКЕ!!!!!

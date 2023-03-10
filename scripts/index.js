@@ -1,6 +1,6 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
-import validationSelectors from "./Data.js";
+import {validationSelectors, cardsArray} from "./data.js";
 
 const editButton = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__info-name");
@@ -58,33 +58,6 @@ addCardButton.addEventListener("click", function () {
     openPopup(document.querySelector(".popup_cards"));
 });
 
-const cardsArray = [
-    {
-        name: "Архыз",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-    },
-    {
-        name: "Челябинская область",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-    },
-    {
-        name: "Иваново",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-    },
-    {
-        name: "Камчатка",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-    },
-    {
-        name: "Холмогорский район",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-    },
-    {
-        name: "Байкал",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-    },
-];
-
 function addNewCard(card) {
         const renderedCard = new Card(card.name, card.link, "#element-template");
         const cardElement = renderedCard.generateCard();
@@ -137,4 +110,4 @@ formList.forEach((formElement) => {
     validator.enableValidation();
 });
 
-export default openPopup
+export {openPopup};
