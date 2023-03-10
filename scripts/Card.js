@@ -1,8 +1,16 @@
+import {openPopup} from "./index.js";
+
+const popupImageWide = document.querySelector(".popup__wide");
+const popupImageTitle = document.querySelector(".popup__card-name");
+const popupImage = document.querySelector(".popup_image");
+
 class Card {
-    constructor(data, templateSelector) {
-        this._data = data;
+    constructor(name, link, templateSelector) {
+        this._name = name;
+        this._link = link;
         this._templateSelector = templateSelector;
     }
+
 
     _getTemplate() {
         const template = document.querySelector(this._templateSelector).content;
@@ -16,6 +24,12 @@ class Card {
     _handleDeleteCard(event) {
         event.target.closest(".element").remove();
     }
+    
+    _openPopupImg() {
+        openPopup(popupImage);
+        popupImageWide.src = this._link;
+        popupImageTitle.textContent = this._name;
+    }
 
     _setEventListeners(cardElement) {
         const likeButton = cardElement.querySelector(".element__like");
@@ -23,6 +37,11 @@ class Card {
 
         const deleteButton = cardElement.querySelector(".element__trash-button");
         deleteButton.addEventListener("click", this._handleDeleteCard);
+
+        const cardImage = cardElement.querySelector(".element__image");
+        cardImage.addEventListener("click", () => {
+            this._openPopupImg()
+        });
     }
 
     generateCard() {
@@ -30,9 +49,9 @@ class Card {
         const cardImage = cardElement.querySelector(".element__image");
         const cardName = cardElement.querySelector(".element__name");
 
-        cardImage.src = this._data.link;
-        cardImage.alt = this._data.name;
-        cardName.textContent = this._data.name;
+        cardImage.src = this._link;
+        cardImage.alt = this._name;
+        cardName.textContent = this._name;
 
         this._setEventListeners(cardElement);
 
