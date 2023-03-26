@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="pages/index.css">
-  <link rel="icon" href="images\header\logo.svg" sizes="any">
+  <link rel="icon" href="<%=require('/src/images/header/logo.svg')%>" sizes="any">
   <title>Mesto</title>
 </head>
 <body>
@@ -26,7 +25,7 @@
   </header>
   <main class="content">
     <section class="profile">
-    <img class="profile__avatar" src="images/profile/Avatar.png" alt="Фото профиля">
+    <img class="profile__avatar" src="<%=require('/src/images/profile/Avatar.png')%>" alt="Фото профиля">
     <div class="profile__info">
       <div class="profile__info-container">
         <h1 class="profile__info-name">Жак-Ив Кусто</h1>
@@ -66,12 +65,12 @@
       <div class="popup__cover"></div>
       <form id="profile-form" class="popup__form popup__container" novalidate>
         <button type="button" class="popup__close-icon">
-          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
+          <img src="<%=require('/src/images/popup/close-icon.png')%>" alt="Кнопка закрыть">
         </button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input required minlength="2" maxlength="40" type="text" id="profile__name-input" name="name" class="popup__form-item popup__form-item_name" value="Жак-Ив Кусто">
+        <input required minlength="2" maxlength="40" type="text" id="profile__name-input" name="name" class="popup__form-item popup__form-item_name" value="">
         <span class="popup__form-item-error profile__name-input-error"></span>
-        <input required minlength="2" maxlength="200" type="text" id="profile__subtitle-input" name="subtitle" class="popup__form-item popup__form-item_subtitle" value="Исследователь океана">
+        <input required minlength="2" maxlength="200" type="text" id="profile__subtitle-input" name="subtitle" class="popup__form-item popup__form-item_subtitle" value="">
         <span class="popup__form-item-error profile__subtitle-input-error"></span>
         <button type="submit" id="profile__button" name="button" class="popup__form-item_button">Сохранить</button>
       </form>
@@ -80,7 +79,7 @@
       <div class="popup__cover"></div>
       <form id="card-form" class="popup__form popup__container" novalidate>
         <button type="button" class="popup__close-icon">
-          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
+          <img src="<%=require('/src/images/popup/close-icon.png')%>" alt="Кнопка закрыть">
         </button>
         <h2 class="popup__title">Новое место</h2>
         <input type="text" required minlength="2" maxlength="30" id="cards__name" name="name" class="popup__form-item popup__form-item_name" placeholder="Название">
@@ -94,7 +93,7 @@
       <div class="popup__cover"></div>
       <div class="popup__container">
         <button type="button" class="popup__close-icon">
-          <img src="images/popup/close-icon.png" alt="Кнопка закрыть">
+          <img src="<%=require('/src/images/popup/close-icon.png')%>" alt="Кнопка закрыть">
         </button>
         <img src="" class="popup__wide" alt="Изображение с карточки">
         <p class="popup__card-name"></p>
@@ -105,6 +104,5 @@
     <p class="footer__title">&copy;	2023 Mesto Russia</p>
   </section>
 </div>
-<script type="module" src="scripts/index.js"></script>
 </body>
 </html>
