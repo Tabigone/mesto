@@ -1,9 +1,9 @@
-class Card {
+export default class Card {
   constructor(name, link, templateSelector, handleCardClick) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
-    this._handleCardClick = handleCardClick; 
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -19,6 +19,9 @@ class Card {
     event.target.closest(".element").remove();
   }
 
+  _getCardInfo() {
+    this._handleCardClick({ name: this._name, link: this._link });
+  }
 
   _setEventListeners(cardElement) {
     const likeButton = cardElement.querySelector(".element__like");
@@ -29,7 +32,7 @@ class Card {
 
     const cardImage = cardElement.querySelector(".element__image");
     cardImage.addEventListener("click", () => {
-      this._handleCardClick({name: this._name, link: this._link});
+      this._getCardInfo();
     });
   }
 
@@ -47,5 +50,3 @@ class Card {
     return cardElement;
   }
 }
-
-export default Card;
