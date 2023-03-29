@@ -1,18 +1,16 @@
-import PopupWithImage from "./scripts/components/PopupWithImage.js";
-import PopupWithForm from "./scripts/components/PopupWithForm.js";
-import FormValidator from "./scripts/components/FormValidator.js";
-import Card from "./scripts/components/Card.js";
-import { validationSelectors, cardsArray } from "./scripts/utils/data.js";
+import PopupWithImage from "../scripts/components/PopupWithImage.js";
+import PopupWithForm from "../scripts/components/PopupWithForm.js";
+import FormValidator from "../scripts/components/FormValidator.js";
+import Card from "../scripts/components/Card.js";
+import { validationSelectors, cardsArray } from "../scripts/utils/data.js";
 import {
   editButton,
   addCardButton,
   popupProfileName,
-  popupProfileSubtitle,
-  profileForm,
-  cardForm,
-} from "./scripts/utils/constants.js";
-import UserInfo from "./scripts/components/UserInfo.js";
-import Section from "./scripts/components/Section.js";
+  popupProfileSubtitle
+} from "../scripts/utils/constants.js";
+import UserInfo from "../scripts/components/UserInfo.js";
+import Section from "../scripts/components/Section.js";
 import "./index.css";
 
 const popupImage = new PopupWithImage(".popup_image");
@@ -45,8 +43,9 @@ editButton.addEventListener("click", () => {
   const { name, subtitle } = profileInfo.getUserInfo();
   popupProfileName.value = name;
   popupProfileSubtitle.value = subtitle;
-  const validator = new FormValidator(validationSelectors, profileForm);
-  validator.enableValidation();
+  const inputEvent = new Event("input");
+  popupProfileName.dispatchEvent(inputEvent);
+  popupProfileSubtitle.dispatchEvent(inputEvent);
   popupProfile.open();
 });
 
@@ -56,7 +55,11 @@ function addOneCard(card) {
 
 const popupCard = new PopupWithForm(".popup_cards", addOneCard);
 addCardButton.addEventListener("click", () => {
-  const validator = new FormValidator(validationSelectors, cardForm);
-  validator.enableValidation();
   popupCard.open();
+});
+
+const formList = Array.from(document.querySelectorAll(".popup__form"));
+formList.forEach((formElement) => {
+  const validator = new FormValidator(validationSelectors, formElement);
+  validator.enableValidation();
 });

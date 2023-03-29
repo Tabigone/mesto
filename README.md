@@ -13,6 +13,8 @@
 7. Импорт файлов и стилей из макета в Figma
 8. Язык программирования JavaScript
 9. Взаимодействие JavaScript с DOM деревом проекта
+10. ООП
+11. Сборка проекта с помощью Webpack 
 ---
 
 * [LinkedIn](https://www.linkedin.com/in/sergey-pryazhentsev-627058222/)
