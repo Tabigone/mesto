@@ -829,6 +829,12 @@ template {
     opacity: 1;
     transition: visibility 1s, opacity 0.2s linear;
 }
+
+.popup_delete.popup_condition_opened {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 0.2s linear;
+}
 .popup_profile.popup_condition_hidden {
     visibility: hidden;
     transition: visibility 1s, opacity 0.2s linear;
@@ -840,6 +846,11 @@ template {
 }
 
 .popup_image.popup_condition_hidden {
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.popup_delete.popup_condition_hidden {
     visibility: hidden;
     transition: visibility 1s, opacity 0.2s linear;
 }
@@ -906,7 +917,6 @@ body {
 }
 
 .element__like {
-    margin: 0 15px 0 0;
     transition: opacity .3s linear;
     padding: 0;
     background: none;
@@ -946,6 +956,25 @@ body {
 .element__trash-button:hover {
     opacity: .6;
     cursor: pointer;
+}
+.element__like-counter {
+    color: #000000;
+    width: 10px;
+    height: 13px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    margin: 3px 0 0;
+}
+.element__like-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 22px;
+    margin: 0 15px 0 0;
 }
 .element {
     display: flex;
