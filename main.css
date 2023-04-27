@@ -535,6 +535,12 @@ template {
     max-width: 500px;
 }
 
+@media screen and (max-width: 768px) {
+    .profile__info-subtitle {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .profile__info-name {
         font-style: normal;
