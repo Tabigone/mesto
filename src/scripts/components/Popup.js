@@ -22,6 +22,10 @@ export default class Popup {
     document.body.style.overflow = "";
   }
 
+  _scrollTimeout() {
+    setTimeout(this._enableScroll, 200)
+  }
+
   open() {
     this._popup.classList.add("popup_condition_opened");
     this._popup.classList.remove("popup_condition_hidden");
@@ -31,7 +35,7 @@ export default class Popup {
   close() {
     this._popup.classList.remove("popup_condition_opened");
     this._popup.classList.add("popup_condition_hidden");
-    this._enableScroll();
+    this._scrollTimeout();
   }
 
   setEventListeners() {
