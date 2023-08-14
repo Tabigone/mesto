@@ -1,0 +1,18 @@
+@import url(_hidden/.element__trash-button_hidden.css);
+
+.element__trash-button {
+    border: none;
+    background-color: rgba(0, 0, 0, .0);
+    height: 19px;
+    width: 18px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    transition: opacity 0.5s linear;
+}
+
+.element__trash-button:hover {
+    opacity: .6;
+    cursor: pointer;
+}

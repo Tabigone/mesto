@@ -1,0 +1,24 @@
+.popup_profile.popup_condition_hidden {
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.popup_cards.popup_condition_hidden {
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.popup_image.popup_condition_hidden {
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.popup_delete.popup_condition_hidden {
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.popup_avatar-edit.popup_condition_hidden {
+    visibility: hidden;
+    transition: visibility 1s, opacity 0.2s linear;
+}

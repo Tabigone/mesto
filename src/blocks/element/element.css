@@ -1,0 +1,25 @@
+@import url(__image/element__image.css);
+@import url(__box/element__box.css);
+@import url(__like/element__like.css);
+@import url(__name/element__name.css);
+@import url(__trash-button/element__trash-button.css);
+@import url(__like-counter/element__like-counter.css);
+@import url(__like-container/element__like-container.css);
+
+.element {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+    .element {
+        max-width: 280px;
+        margin: 0
+    }
+}
