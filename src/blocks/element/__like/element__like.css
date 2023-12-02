@@ -1,7 +1,6 @@
 @import url(_active/element__like_active.css);
 
 .element__like {
-    margin: 0 15px 0 0;
     transition: opacity .3s linear;
     padding: 0;
     background: none;

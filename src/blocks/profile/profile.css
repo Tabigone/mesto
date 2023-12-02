@@ -5,6 +5,7 @@
 @import url(__info-container/profile__info-container.css);
 @import url(__info-name/profile__info-name.css);
 @import url(__info-subtitle/profile__info-subtitle.css);
+@import url(__avatar-cover/profile__avatar-cover.css);
 
 .profile {
     min-width: 320px;
@@ -12,6 +13,7 @@
     margin: 40px auto 0;
     color: white;
     display: flex;
+    position: relative;
 }
 
 @media screen and (max-width: 768px) {

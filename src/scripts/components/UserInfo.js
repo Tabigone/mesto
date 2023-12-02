@@ -11,8 +11,8 @@ export default class UserInfo {
     };
   }
 
-  setUserInfo({ name, subtitle }) {
-    this._nameElement.textContent = name;
-    this._subtitleElement.textContent = subtitle;
+  setUserInfo(user) {
+    this._nameElement.textContent = user.name;
+    this._subtitleElement.textContent = user.about;
   }
 }
