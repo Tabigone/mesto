@@ -15,6 +15,8 @@
 9. Взаимодействие JavaScript с DOM деревом проекта
 10. ООП
 11. Сборка проекта с помощью Webpack 
+
+Ссылка на проект: https://tabigone.github.io/mesto/
 ---
 
 * [LinkedIn](https://www.linkedin.com/in/sergey-pryazhentsev-627058222/)

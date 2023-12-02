@@ -15,3 +15,15 @@
     opacity: 1;
     transition: visibility 1s, opacity 0.2s linear;
 }
+
+.popup_delete.popup_condition_opened {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.popup_avatar-edit.popup_condition_opened {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 0.2s linear;
+}
